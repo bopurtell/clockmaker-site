@@ -13,3 +13,10 @@ It struct me that such people exist of literary capability, as well as fascinati
 Other sites such as Sasha Skvortsov's [Ceramic Hacker](https://ceramichacker.com/) and [Hari's Hardcaml Wiki](https://ocamlstreet.gitbook.io/hardcaml-wiki) served as demonstrations of a young professional's passion in the hardware world, naturally leading to mine own - (particularly relating to niche topics such as [hardcaml](https://hardcaml.org/) or trading systems). A [professor](https://www.linkedin.com/in/gregory-stitt-92ab1819/) of mine's [blog](https://stitt-hub.com/) also served as yet another enticement. And to be great, one must follow the greats.
 
 Why **Carteret**? [Mahwah, New Jersey](https://en.wikipedia.org/wiki/Mahwah,_New_Jersey) hosts NYSE's primary cluster, while a short hour drive away [Carteret](https://en.wikipedia.org/wiki/Carteret,_New_Jersey) hosts NASDAQ's equivalent.
+
+<figure style="max-width: 360px; margin: 2em auto; text-align: center;">
+
+![My LinkedIn photo](../../assets/linkedin_photo.png)
+
+<figcaption style="font-size: 0.85em;">Me at Vanderbilt buildling submarines</figcaption>
+</figure>
