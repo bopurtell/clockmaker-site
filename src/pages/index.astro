@@ -1,8 +1,13 @@
 ---
+import { getEntry, render } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const introduction = await getEntry('blog', 'introduction');
+if (!introduction) throw new Error('Introduction post not found');
+const { Content } = await render(introduction);
 ---
 
 <!doctype html>
@@ -22,24 +27,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			</section>
 
 			<section class="article-header">
-				<h2 class="article-title">Introduction</h2>
+				<h2 class="article-title">{introduction.data.title}</h2>
 				<div class="article-meta">
 					<span>English</span>
-					<time datetime="2026-08-02">02 August 2026</time>
+					<time datetime={introduction.data.pubDate.toISOString()}>
+						{introduction.data.pubDate.toLocaleDateString('en-GB', {
+							day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
+						})}
+					</time>
 				</div>
-        <p>Welcome to my collection of thoughts and word in the world of hardware engineering and trading systems. While originally a software enjoyer, my profound joy found in hardware systems has much taken the first spot of engineering love in my rankings, kicking C++ to a sore second, and Minecraft to a terrible third.</p>
 			</section>
 
-      <p>
-      In a pleasant conversation with a hardware engineer in the industry, I learned of a blog: <a href="https://sniperinmahwah.wordpress.com/">Sniper in Mahwah</a>.
-      It struct me that such people exist of literary capability, as well as fascination with the world of trading systems. The minimalist elegance to the site, as well as francophonic attributes were quite pleasing, and as such much of the structure has been naively copied in some emulation <code>fork</code>'d of admiration.
-
-      Other sites such as <a href="https://ceramichacker.com/">Ceramic Hacker</a> and <a href="https://ocamlstreet.gitbook.io/hardcaml-wiki">Hari's Hardcaml Wiki</a> served as demonstrations of a young professional's passion in the hardware world, naturally leading to mine own - (particularly relating to niche topics such as <a href="https://hardcaml.org/">hardcaml</a> or trading systems). A <a href="https://www.linkedin.com/in/gregory-stitt-92ab1819/">professor</a> of mine's <a href="https://stitt-hub.com/">blog</a> also served as yet another enticement. And to be great, one must follow the greats.
-      </p>
-
-      <p>
-      Why <b>Carteret</b>? <a href="https://en.wikipedia.org/wiki/Mahwah,_New_Jersey">Mahwah, New Jersey</a> hosts NYSE's primary cluster, while a short hour drive away <a href="https://en.wikipedia.org/wiki/Carteret,_New_Jersey">Carteret</a> hosts NASDAQ's equivalent.
-      </p>
+			<Content />
 
 		</main>
 		<Footer />
